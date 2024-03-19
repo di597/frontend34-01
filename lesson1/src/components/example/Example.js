@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Example.module.css';
 
-function Example({children}) {
+const Example = ({children}) => {
     return (
         <div>
             {children}
