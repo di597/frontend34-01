@@ -1,13 +1,14 @@
 import React from 'react';
 import classes from './Modal.module.css';
 import Input from "../input/Input";
+import Button from "../button/Button";
 
 const Modal = ({children, handleShow, onChange, inputValue}) => {
     return (
         <>
             <div className={classes.modalWrapper}></div>
             <div className={classes.modalContent}>
-                <button onClick={handleShow}>Закрыть</button>
+                <Button title={'закрыть'} action={handleShow}/>
                 <p>{inputValue}</p>
                 <Input
                     placeholder={'внести данные'}

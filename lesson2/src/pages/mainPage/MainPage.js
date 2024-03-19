@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Buttons from "../../components/buttons/Buttons";
 
 import Modal from "../../components/modal/Modal";
+import List from "../../components/list/List";
+import Button from "../../components/button/Button";
 
 const MainPage =(props) => {
     const navBar = ['Главная', 'Контакты', 'О нас', 'О нас']
@@ -9,6 +11,25 @@ const MainPage =(props) => {
     // console.log(show,'start')
     const [show, setShow] = useState(false)
     // console.log(show, 'showshowshowshow')
+
+    const list = [
+        {
+            id:1 ,
+            title: 'coding',
+            completed: false
+        },
+        {
+            id:2,
+            title: 'eat',
+            completed: false
+        },
+        {
+            id:3,
+            title: 'sleep',
+            completed: false
+        }
+    ]
+
     const handleShow = () => {
         // show = true
         // console.log(show, 'end')
@@ -31,12 +52,13 @@ const MainPage =(props) => {
 
                 </Modal>
             }
+            <List list={list}/>
 
 
 
 
             <Buttons/>
-            <button onClick={handleShow}>Открыть</button>
+            <Button title={'Открыть'} action={handleShow}/>
             {/*<Header navBar={navBar}/>*/}
             {/*<User name = {'Diana'} age={28}/>*/}
             {/*<User name = {'Timur'} age={31}/>*/}
