@@ -25,7 +25,7 @@ const MainPage =(props) => {
                 completed: false
             },
             {
-                id:6,
+                id:5,
                 title: 'sleep',
                 completed: false
             }
@@ -49,16 +49,15 @@ const MainPage =(props) => {
     }
     const handleAdd = () => {
         setTasks(prev=>[...prev, {
-            id: tasks[tasks.length-1].id+1,
+            id: tasks.length===0 ? 1 : tasks[tasks.length-1].id+1,
             title: inputTask,
             completed: false
         }])
 
     }
     const handleDelete = (id) => {
-        console.log(id);
+        setTasks(tasks.filter(task=>task.id!==id))
     }
-
 
 
 
