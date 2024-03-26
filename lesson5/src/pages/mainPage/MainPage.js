@@ -115,6 +115,10 @@ const MainPage =(props) => {
             setTasks(myLocalStorage)
         }
     }, []);
+    const handleClearAll = () => {
+        setTasks([]);
+        localStorage.removeItem('tasks');
+    };
 
     // useEffect(() => {
     //     localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -148,6 +152,7 @@ const MainPage =(props) => {
             <User users={users}/>
             <Button title={'LocalStorage'} action={sendLocalStorage}/>
             <Button title={'GetLocalStorage'} action={getLocalStorage}/>
+            <Button title={'Clear All Tasks'} action={handleClearAll} />
             <div>
                 <select value={filterOption} onChange={handleFilterChange}>
                     <option value="all">All tasks</option>
