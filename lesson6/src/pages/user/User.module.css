@@ -1,0 +1,14 @@
+.users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.user {
+    /*width: 200px;*/
+    border: 1px solid plum;
+}
+.age {
+    color: aquamarine;
+}
